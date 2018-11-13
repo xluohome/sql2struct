@@ -72,7 +72,7 @@ new Vue({
             var types = this.typeMap
             var structResult = 'type '
             for (var i = 0, len = res.length; i < len; i++) {
-                var field = res[i].match(/\`(.+)\`\s+(tinyint|smallint|int|mediumint|bigint|float|double|decimal|varchar|char|text|mediumtext|longtext|datetime|time|date|enum|set|blob)?/)
+                var field = res[i].match(/\`(.+)\`\s+(tinyint|smallint|int|mediumint|bigint|float|double|decimal|varchar|char|text|mediumtext|longtext|datetime|time|date|enum|set|blob|bit)?/)
                 if (i == 0) {   // 第一个字段为数据表名称
                     if (field && field[1] != undefined && field[2] == undefined) {
                         var tbName = titleCase(field[1])
@@ -232,6 +232,7 @@ function getTypeMap() {
         'timestramp': 'int64',
         'enum': 'string',
         'set': 'string',
-        'blob': 'string' 
+        'blob': 'string',
+		'bit': 'byte'
     }
 }
