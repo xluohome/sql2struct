@@ -48,6 +48,13 @@
 
     <el-dialog title="options" :visible.sync="dialogFormVisible">
       <el-form>
+	    <el-form-item label="sqlx">
+          <el-switch
+            v-model="useSqlx"
+            active-color="#13ce66"
+            inactive-color="#ff4949">
+          </el-switch>
+        </el-form-item>
         <el-form-item label="gorm">
           <el-switch
             v-model="useGorm"
